@@ -1,11 +1,17 @@
 <div class="container">
-    <div class="alert alert-success" role="alert" [hidden]="!adicionado">
-      Funcionário adicionado
-      <strong>{{nome}}</strong>
-    </div>
-    <div class="form-group">
-      <label for="nome">Nome: </label>
-      <input type="text" class="form-control" id="nome" placeholder="Enter name" [(ngModel)]="nome" (focus)="adicionado = false">
-      <small id="nomeHelp" class="form-text text-muted">We'll never share your nome with anyone else.</small>
-    </div>
-    <button class="btn btn-primary" type="submit" (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
+  <div class="alert alert-success" role="alert" *ngIf="adicionado">
+    Funcionário adicionado
+    <strong>{{nome}}</strong>
+  </div>
+  <div class="form-group">
+    <label for="nome">Nome: </label>
+    <input type="text" class="form-control" id="nome" placeholder="Enter name" [(ngModel)]="nome" (focus)="adicionado = false"
+      appCampoColorido [cor]="'red'" #campo="campoColorido">
+    <small id="nomeHelp" class="form-text text-muted">We'll never share your nome with anyone else.</small>
+  </div>
+
+  <button class="btn btn-primary" type="button" (click)="adicionar()" [disabled]="nome.length == 0">Adicionar</button>
+
+  <button class="btn btn-info" (click)="campo.colorir()">Colorir</button>
+  <button class="btn btn-info" (click)="campo.descolorir()">Descolorir</button>
+</div>

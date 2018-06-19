@@ -5,15 +5,14 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './funcionario-card.component.html',
   styleUrls: ['./funcionario-card.component.css']
 })
-export class FuncionarioCardComponent{
+export class FuncionarioCardComponent {
 
   @Input('obj') funcionario: any;
 
-
-  getEstilosCartao(){
+  getEstilosCartao() {
     return {
         'border-width': this.funcionario.id + 'px',
-        backgroundColor: this.funcionario.id % 2 == 0 ? 'lightblue' : 'lightgreen'
+        backgroundColor: this.funcionario.id % 2 === 0 ? 'lightblue' : 'lightgreen'
     };
   }
 /*
@@ -21,7 +20,7 @@ export class FuncionarioCardComponent{
     return ['badge', 'badge-default'];
   }
   */
-  isAdmin(){
+  isAdmin() {
    return this.funcionario.nome.startsWith('T');
   }
 }

@@ -1,8 +1,39 @@
+<!--{{cliente | json}}-->
+<!--{{usuarioForm.valid}}-->
+
+<!--<div class="alert alert-danger" *ngIf="usuarioForm.invalid && usuarioForm.dirty">Preencha todos os campos corretamente.</div>-->
+
+<!--<div class="container">-->
+  <!--<form autocomplete=off #usuarioForm="ngForm" (ngSubmit)="salvar(usuarioForm)">-->
+    <!--<div class="form-group" [class.was-validated]="nomeValidator.invalid && nomeValidator.touched">-->
+      <!--<label class="form-control-label">Nome</label>-->
+      <!--<input type="text" class="form-control" [class.is-invalid]="nomeValidator.invalid && nomeValidator.touched" name="nome" [(ngModel)]="cliente.nome" required minlength="10" #nomeValidator="ngModel">-->
+
+      <!--<div *ngIf="nomeValidator.hasError('required') && nomeValidator.touched" class="invalid-feedback">Informe um nome</div>-->
+      <!--<div *ngIf="nomeValidator.hasError('minlength')  && nomeValidator.touched" class="invalid-feedback">O nome deve ser completo</div>-->
+
+    <!--</div>-->
+    <!--<div class="form-group" [class.was-validated]="emailValidator.invalid && emailValidator.touched">-->
+      <!--<label class="form-control-label">Email</label>-->
+      <!--<input type="email" class="form-control" [class.is-invalid]="emailValidator.invalid && emailValidator.touched" name="email" [(ngModel)]="cliente.email" required email #emailValidator="ngModel">-->
+
+      <!--<div *ngIf="emailValidator.hasError('email') && emailValidator.touched" class="invalid-feedback">Informe um email valido</div>-->
+      <!--<div *ngIf="emailValidator.hasError('required') && emailValidator.touched" class="invalid-feedback">Informe um email</div>-->
+
+    <!--</div>-->
+    <!--<div class="form-group" [class.was-validated]="profissaoValidator.invalid && profissaoValidator.touched">-->
+      <!--<label class="form-control-label">Profissão</label>-->
+      <!--<select class="form-control" [class.is-invalid]="profissaoValidator.invalid && profissaoValidator.touched" name="profissao" [(ngModel)]="cliente.profissao" required #profissaoValidator="ngModel">-->
+        <!--<option value="">Selecione</option>-->
+        <!--<option *ngFor="let profissao of profissoes" [value]="profissao">{{profissao}}</option>-->
+      <!--</select>-->
+      <!--<div *ngIf="profissaoValidator.hasError('required') && profissaoValidator.touched" class="invalid-feedback">Informe uma profissao valido</div>-->
+    <!--</div>-->
+    <!--<button class="btn btn-info" type="submit" [disabled]="!usuarioForm.valid">Salvar</button>-->
+  <!--</form>-->
+<!--</div>-->
 <div class="container">
-<app-funcionario-form (funcionarioAdicionado)="aoAdicionar($event)"></app-funcionario-form>
-<div class="row" style="margin-top: 20px">
-    <div class="col-2" *ngFor="let f of funcionarios">
-      <app-funcionario-card [obj]="f"></app-funcionario-card>
-    </div>
-  </div>
+  <app-menu></app-menu>
+  -
+  <app-botao-grande label="AppComponent"></app-botao-grande>
 </div>
